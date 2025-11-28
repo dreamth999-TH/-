@@ -129,41 +129,6 @@ function App() {
     setIsFormOpen(true);
   };
 
-  const handleView = (record: WasteRecord) => {
-    Swal.fire({
-      title: 'รายละเอียดข้อมูล',
-      html: `
-        <div class="text-left space-y-2 text-sm">
-           <div class="grid grid-cols-2 gap-2">
-              <div><b>ชื่อ-นามสกุล:</b></div><div>${record.fullName}</div>
-              <div><b>ประเภท:</b></div><div>${record.addressType}</div>
-              ${record.shopName ? `<div><b>ชื่อร้าน:</b></div><div>${record.shopName}</div>` : ''}
-              <div><b>ชุมชน:</b></div><div>${record.community}</div>
-              <div><b>ที่อยู่:</b></div><div>${record.address} ${record.road}</div>
-              <div><b>เบอร์โทร:</b></div><div>${record.phone}</div>
-              <div><b>สมาชิก:</b></div><div>${record.residentsCount} คน</div>
-              <div><b>ผู้รับผิดชอบ:</b></div><div>${record.responsiblePerson}</div>
-           </div>
-           <hr class="my-2"/>
-           <div>
-              <div class="font-bold text-green-700 mb-1">การจัดการขยะ</div>
-              <div class="pl-2 border-l-2 border-green-200">${record.householdWaste}</div>
-           </div>
-           <div>
-              <div class="font-bold text-blue-700 mb-1">การจัดการน้ำเสีย</div>
-              <div class="pl-2 border-l-2 border-blue-200">${record.wastewaterMgmt}</div>
-           </div>
-        </div>
-      `,
-      showCloseButton: true,
-      confirmButtonText: 'ปิด',
-      confirmButtonColor: '#10B981',
-      imageUrl: record.imageUrl,
-      imageHeight: record.imageUrl ? 200 : undefined,
-      imageAlt: 'Home image'
-    });
-  };
-
   const openNewForm = () => {
     setEditingRecord(undefined);
     setIsFormOpen(true);
@@ -555,7 +520,6 @@ function App() {
                        record={record} 
                        onEdit={handleEdit} 
                        onDelete={handleDelete} 
-                       onView={handleView}
                      />
                    ))}
                  </div>
