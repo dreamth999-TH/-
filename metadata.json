@@ -1,0 +1,7 @@
+{
+  "name": "Mae Hong Son Waste Management",
+  "description": "A comprehensive waste and wastewater data management system for Mae Hong Son Municipality, featuring Google Sheets integration, dashboards, and responsive design.",
+  "requestFramePermissions": [
+    "geolocation"
+  ]
+}
